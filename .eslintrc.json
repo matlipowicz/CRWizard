@@ -10,7 +10,8 @@
     "plugin:import/typescript",
     "prettier"
   ],
-  "plugins": ["prettier"],
+
+  "plugins": ["prettier", "simple-import-sort"],
   "rules": {
     "prettier/prettier": [
       "error",
@@ -18,25 +19,12 @@
         "endOfLine": "auto"
       }
     ],
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    "react/no-array-index-key": "warn",
+    "arrow-body-style": ["error", "as-needed"],
+    "react/self-closing-comp": ["error", { "component": true, "html": true }],
     "react/react-in-jsx-scope": "off",
-    "import/order": [
-      "error",
-      {
-        "groups": [
-          "builtin",
-          "external",
-          "internal",
-          "parent",
-          "sibling",
-          "index"
-        ],
-        "newlines-between": "always",
-        "alphabetize": {
-          "order": "asc",
-          "caseInsensitive": true
-        }
-      }
-    ],
     "jsx-a11y/anchor-is-valid": [
       "error",
       {
@@ -46,6 +34,35 @@
       }
     ]
   },
+  "overrides": [
+    // override "simple-import-sort" config
+    {
+      "files": ["*.js", "*.jsx", "*.ts", "*.tsx"],
+      "rules": {
+        "simple-import-sort/imports": [
+          "error",
+          {
+            "groups": [
+              // `react` first, `next` second, then packages starting with a character
+              ["^react$", "^next", "^[a-z]"],
+              // Packages starting with `@`
+              ["^@"],
+              // Packages starting with `~`
+              ["^~"],
+              // Imports starting with `../`
+              ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+              // Imports starting with `./`
+              ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+              // Style imports
+              ["^.+\\.s?css$"],
+              // Side effect imports
+              ["^\\u0000"]
+            ]
+          }
+        ]
+      }
+    }
+  ],
   "settings": {
     "react": {
       "version": "detect"
