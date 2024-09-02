@@ -2,6 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 
+import { ThemeProvider } from '@/context/ThemeContext';
 import { Analytics } from '@vercel/analytics/react';
 
 import './globals.css';
@@ -22,7 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={font.className}>{children}</body>
+      <body className={font.className}>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
       <Analytics />
     </html>
   );
