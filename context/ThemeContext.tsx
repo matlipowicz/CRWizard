@@ -8,7 +8,7 @@ export const ThemeContext = createContext<ThemeContextType>({
 });
 
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
-  const [darkTheme, setDarkTheme] = useState<boolean>(true);
+  const [darkTheme, setDarkTheme] = useState<boolean>(false);
 
   const setTheme = useCallback(() => {
     if (!darkTheme) {
@@ -27,7 +27,7 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
 
   useEffect(() => {
     setTheme();
-  }, []);
+  }, [setTheme]);
 
   function initializeTheme() {
     const theme = localStorage.getItem('theme');
