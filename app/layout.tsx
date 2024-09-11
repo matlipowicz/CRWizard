@@ -23,8 +23,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
+      <link rel='icon' href='/CRWIZARD_logo.svg' sizes='any' />
       <body className={font.className}>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <main>{children}</main>
+        </ThemeProvider>
       </body>
       <Analytics />
     </html>

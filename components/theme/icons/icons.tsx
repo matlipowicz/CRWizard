@@ -22,10 +22,13 @@ import {
   FiXSquare,
 } from 'react-icons/fi';
 
-import CRWizard from './CRWIZARD_logo.svg';
+import CRWizard from '@/public/CRWIZARD_logo.svg';
+import CRWizardNoBg from '@/public/CRWIZARD_NO_BG_logo.svg';
+import Wand from '@/public/wand.svg';
 
 export const Icons = {
   logo: CRWizard,
+  logoNoBg: CRWizardNoBg,
   hamburgerMenu: FiMenu,
   cross: FiXSquare,
   repository: FiDatabase,
@@ -39,6 +42,7 @@ export const Icons = {
   arrowDown: FiChevronDown,
   logout: FiLogOut,
   login: FiLogIn,
+  wand: Wand,
   folder: {
     open: FiFolder,
     minus: FiFolderMinus,

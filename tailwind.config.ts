@@ -10,14 +10,24 @@ const config = {
   ],
   prefix: '',
   theme: {
+    screens: {
+      'phone-small': '340px',
+      phone: '515px',
+      'phone-large': '640px',
+      tablet: '768px',
+      laptop: '1024px',
+      desktop: '1280px',
+      'desktop-large': '1400px',
+    },
     container: {
       center: true,
       padding: '2rem',
-      screens: {
-        '2xl': '1400px',
-      },
     },
     extend: {
+      spacing: {
+        '100': '30rem',
+        '104': '34rem',
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
@@ -51,6 +61,17 @@ const config = {
         card: {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
+        },
+        gradient_light: {
+          DEFAULT: 'hsl(var(--gradient-light-green))',
+          foreground: 'hsl(var(--gradient-light-green-foreground))',
+        },
+        gradient_dark: {
+          DEFAULT: 'hsl(var(--gradient-dark-green))',
+          foreground: 'hsl(var(--gradient-dark-green-foreground))',
+        },
+        description: {
+          DEFAULT: 'hsl(var(--light-foreground))',
         },
       },
       borderRadius: {
