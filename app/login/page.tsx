@@ -5,7 +5,7 @@ import { Card } from '@/components/ui/card';
 export default function Login() {
   return (
     <section className='grid h-dvh w-full place-content-center'>
-      <Card className='phone:w-full tablet:min-w-104 phone-small: phone:justify-between phone:h-full flex h-dvh flex-col items-center justify-center p-4 drop-shadow-md'>
+      <Card className='phone-small: flex h-dvh flex-col items-center justify-center p-4 drop-shadow-md phone:h-full phone:w-full phone:justify-between tablet:min-w-104'>
         <div className='flex flex-col gap-4'>
           <div className='flex flex-col items-center justify-center'>
             <div>

@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 
 import { ThemeProvider } from '@/context/ThemeContext';
-import { Analytics } from '@vercel/analytics/react';
 
 import './globals.css';
 
@@ -29,7 +28,6 @@ export default function RootLayout({
           <main>{children}</main>
         </ThemeProvider>
       </body>
-      <Analytics />
     </html>
   );
 }
